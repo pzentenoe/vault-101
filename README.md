@@ -8,7 +8,7 @@ In this workshop, you will learn:
 * Manage authentication and policies
 * Generate secrets dynamically
 
-This workshop is made of a collection of practical examples aimed to provide you with hands-on experience with Vault. All exercises are contained in the [labs](https://github.com/walmartdigital/vaul-101/tree/master/labs) folder of this repository.
+This workshop is made of a collection of practical examples aimed to provide you with hands-on experience with Vault. All exercises are contained in the [labs](https://github.com/walmartdigital/vault-101/tree/master/labs) folder of this repository.
 
 ## Requirements
 
