@@ -24,7 +24,7 @@ To complete this lab, you need:
 
 One of the core features of Vault is the ability to read and write arbitrary secrets securely. On this lab, we'll do this using the CLI and the HTTP API that can be used to programmatically do operations with Vault.
 
-Secrets written to Vault are encrypted and then written to backend storage. For our dev server, backend storage is in-memory, but in production this would more likely be on disk or in Consul. Vault encrypts the value before it is ever handed to the storage driver. The backend storage mechanism never sees the unencrypted value and doesn't have the means necessary to decrypt it without Vault.
+Secrets written to Vault are encrypted and then written to backend storage. For our development server, backend storage is in-memory, but in production this would more likely be on disk or in [Consul](https://www.consul.io/). Vault encrypts the value before it is ever handed to the storage driver. The backend storage mechanism never sees the unencrypted value and doesn't have the means necessary to decrypt it without Vault.
 
 ## Project setup
 
@@ -47,11 +47,10 @@ Deploy Vault using the Docker container in development mode in order to make thi
       vault
     ```
 
-3. Verify the CLI is working. On a second terminal windows do the following:
+3. Verify the CLI is working. Open a second terminal windows and do the following:
 
     ```bash
     export VAULT_ADDR=http://0.0.0.0:8200
-
     export VAULT_TOKEN=my-root-token
 
     vault status
@@ -73,11 +72,11 @@ If everything is OK, you'll see an output like this.
   HA Enabled      false
   ```
 
-In developer mode, we pass our root token when deploying the container so we can use it later. In a production environment, the root token is obtained when we unseal Vault (this is not covered in this Lab but you can find more info [here](https://www.vaultproject.io/docs/concepts/seal.html))
+In developer mode, we pass our root token when deploying the container, so we can use it later. In a production environment, the root token is obtained when we unseal Vault (this is not covered in this Lab but you can find more info [here](https://www.vaultproject.io/docs/concepts/seal.html))
 
 ## Your first secret
 
-In this section we'll create a secret using the key/value engine, this engine is usually the first and the most common common way to create secrets in Vault.
+In this section we'll create a secret using the key/value engine, this engine is usually the first and the most common way to create secrets in Vault.
 
 - Create a key/value secret
 
@@ -135,3 +134,20 @@ Here we will use the REST API to do Vault secret operations.
     --header "X-Vault-Token: my-root-token" \
     https://127.0.0.1:8200/v1/secret/data/awesome-app
   ```
+
+## Lab review
+
+### What you've learned
+
+In this lab you:
+
+- Created the working environment
+- Created and retrieve a secret using the CLI
+- Created and retrieve a secret using the REST API
+
+### Search and further learning
+
+- [Learning Vault, getting started](https://learn.hashicorp.com/vault/?track=getting-started#getting-started)
+- [Vault architecture](https://www.vaultproject.io/docs/internals/architecture.html)
+- [Vault for Docker](https://github.com/docker-library/docs/tree/master/vault)
+- [Vault commands (CLI)](https://www.vaultproject.io/docs/commands/index.html)

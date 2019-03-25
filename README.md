@@ -17,4 +17,4 @@ This workshop is made of a collection of practical examples aimed to provide you
 
 ## Presentation
 
-* [Slides](https://slides.com/chindou/kubernetes-101)
+* [Slides](#)
