@@ -1,4 +1,4 @@
-# Vault basics
+# Vault ACL policies and encryption as a service
 
 ## Overview
 
