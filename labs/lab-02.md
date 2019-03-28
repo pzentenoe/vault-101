@@ -8,7 +8,7 @@ In this lab, you will learn how to manage ACL Policies in Vault and use the encr
 
 |Component       |Timing            |
 |----------------|------------------|
-|Introduction    |2 minutes         |
+|Introduction    |3 minutes         |
 |Lab             |7 minutes         |
 |Overview        |2 minutes         |
 
