@@ -17,7 +17,7 @@ In this lab, you will learn how to manage ACL Policies in Vault and use the encr
 To complete this lab, you need:
 
 - Complete the previous lab.
-- A computer with any of this operating system: MacOS, Linux or Windows.
+- A computer with any of these operating systems: MacOS, Linux or Windows.
 - The latest version of Docker installed on that machine.
 - The Vault CLI (you can find the installation instructions [here](https://www.vaultproject.io/docs/install/))
 
@@ -25,60 +25,78 @@ To complete this lab, you need:
 
 Everything in Vault is path based, and policies are no exception. Policies provide a declarative way to grant or forbid access to certain paths and operations in Vault. Policies are deny by default, so an empty policy grants no permission in the system.
 
-In this lab we will play with policy workflows and syntaxes.
+In this lab we will play with policy workflows and syntaxes and then we'll use the transit engine to encrypt a plain text.
 
 ## Create and modify a policy
 
 In this section we'll create a policy only with read permission, test it, and then modify the policy with more privileges testing the behaviour.
 
-- Create a read-only policy and name it "dev-policy.hcl"
+- Create a create and update policy with the name "dev-policy"
 
   ```bash
+  export VAULT_ADDR=http://0.0.0.0:8200
   export VAULT_TOKEN=my-root-token
 
-  cat > dev-policy.hcl <<EOF
-  path "secret/awesome-app" {
-      capabilities = ["read"]
-  }
-  EOF
+  echo 'path "secret/*" {
+      capabilities = ["create", "update"]
+  }' | vault policy write dev-policy -
+  ```
 
-  vault policy write awesome-app-ro ./sample-policy.hcl
+- To see the list of policies, run:
+
+  ```bash
+  vault policy list
+  ```
+
+- To view the content of a policy, run:
+
+  ```bash
+  vault policy read dev-policy
   ```
 
 - Create a token with the associated policy and export that token
 
   ```bash
-  vault token create -policy=awesome-app-ro
+  vault token create -policy=dev-policy
   export VAULT_TOKEN=[GENERATED_TOKEN]
   ```
 
-- Try to create a secret with that token (shoud fail because that policy is read-only)
+- Try to create a secret with that token (shoud fail because that policy can't read secrets)
 
   ```bash
   vault kv put secret/awesome-app api_key=abc1234 api_secret=1a2b3c4d
   ```
 
-- Update that policy with all permisions on the given path and sub-paths.
+- Try to get the content of the secret (should fail)
 
   ```bash
-  cat > dev-policy.hcl <<EOF
-  path "secret/awesome-app/*" {
-    capabilities = ["list", "create", "update", "read", "delete"]
-  }
-  EOF
-
-  vault policy write awesome-app-ro ./sample-policy.hcl
+  vault kv get secret/awesome-app
   ```
 
-- Try to create a secret again (this time should success)
+- Update that policy with read permision on the given path
 
   ```bash
-  vault kv put secret/awesome-app api_key=abc1234 api_secret=1a2b3c4d
+  echo 'path "secret/*" {
+    capabilities = ["create", "update", "read"]
+  }' | vault policy write dev-policy -
+  ```
+
+- Create a new token with the associated policy
+
+  ```bash
+  vault token create -policy=dev-policy
+  export VAULT_TOKEN=[GENERATED_TOKEN]
+  ```
+
+- Try to get the content of the secret again
+
+  ```bash
+  vault kv get secret/awesome-app
   ```
 
 ## Encrypt a text string and decrypt it
 
-In this section we'll encrypt a text using the transit engine (encrypt as a service) and then decript it.
+In this section we'll encrypt a text using the transit engine (encrypt as a service), that text will not be written into Vault but we can get the text back decrypting it.
 
 - Enable transit engine
 
@@ -130,4 +148,5 @@ In this lab you:
 
 ### Search and further learning
 
-- [Vault architecture](https://www.vaultproject.io/docs/internals/architecture.html)
+- [Policies in Vault](https://www.hashicorp.com/resources/policies-vault)
+- [Transit Secrets Engine](https://www.vaultproject.io/docs/secrets/transit/index.html)
