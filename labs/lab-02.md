@@ -151,6 +151,8 @@ In this lab you:
 - Update that policy with more permissions
 - Encrypt and decrypt a plain text
 
+Now you can go to [Vault dynamic secrets](https://github.com/walmartdigital/vault-101/blob/master/labs/lab-03.md)
+
 ### Search and further learning
 
 - [Policies in Vault](https://www.hashicorp.com/resources/policies-vault)
