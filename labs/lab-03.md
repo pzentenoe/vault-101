@@ -17,7 +17,7 @@ In this lab, you will learn how to create a MySQL user dynamically when your app
 To complete this lab, you need:
 
 - Ideally have done the previous labs.
-- A computer with any of these operating systems: MacOS, Linux or Windows.
+- A computer with any of these operating systems: macOS, Linux or Windows.
 - The latest version of Docker installed on that machine.
 - The Vault CLI (you can find the installation instructions [here](https://www.vaultproject.io/docs/install/))
 - To save time, please download the Vault image *before* the workshop.
