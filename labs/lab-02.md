@@ -17,7 +17,7 @@ In this lab, you will learn how to manage ACL Policies in Vault and use the encr
 To complete this lab, you need:
 
 - Complete the previous lab.
-- A computer with any of these operating systems: MacOS, Linux or Windows.
+- A computer with any of these operating systems: macOS, Linux or Windows.
 - The latest version of Docker installed on that machine.
 - The Vault CLI (you can find the installation instructions [here](https://www.vaultproject.io/docs/install/))
 - To save time, please download the Vault image *before* the workshop.
