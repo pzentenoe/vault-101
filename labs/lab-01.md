@@ -33,7 +33,7 @@ Secrets written to Vault are encrypted and then written to backend storage. For 
 
 ## Project setup
 
-Deploy Vault using the Docker container in development mode in order to make this lab easier. This mode is not recomended for production, but is enough for the objectives of this lab.
+Deploy Vault using the Docker container in development mode in order to make this lab easier. This mode is not recommended for production, but is enough for the objectives of this lab.
 
 1. Open a terminal window and then create a new Docker network for this lab:
 
@@ -129,7 +129,7 @@ Here we will use the REST API to do Vault secret operations.
     --header "X-Vault-Token: my-root-token" \
     --request POST \
     --data @payload.json \
-    https://127.0.0.1:8200/v1/secret/data/awesome-app
+    http://127.0.0.1:8200/v1/secret/data/awesome-app
   ```
 
 - Get that secret
@@ -137,7 +137,7 @@ Here we will use the REST API to do Vault secret operations.
   ```bash
   curl \
     --header "X-Vault-Token: my-root-token" \
-    https://127.0.0.1:8200/v1/secret/data/awesome-app
+    http://127.0.0.1:8200/v1/secret/data/awesome-app
   ```
 
 ## Lab review
@@ -149,6 +149,9 @@ In this lab you:
 - Created the working environment
 - Created and retrieve a secret using the CLI
 - Created and retrieve a secret using the REST API
+
+Now you can go to [Vault ACL policies and encryption as a service](https://github.com/walmartdigital/vault-101/blob/master/labs/lab-02.md)
+
 
 ### Search and further learning
 
