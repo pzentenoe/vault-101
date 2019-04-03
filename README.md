@@ -13,7 +13,7 @@ This workshop is made of a collection of practical examples aimed to provide you
 ## Requirements
 
 * You should have knowledge about Docker and installed on your machine.
-* Basic proficiency with command-line tools and OSx/Linux operating system environments.
+* Basic proficiency with command-line tools and macOS/Linux operating system environments.
 * The Vault CLI (you can find the installation instructions [here](https://www.vaultproject.io/docs/install/)
 * To save time, please download the Vault image *before* the workshop.
 

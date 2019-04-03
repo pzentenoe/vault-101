@@ -19,6 +19,11 @@ To complete this lab, you need:
 - A computer with any of these operating systems: MacOS, Linux or Windows.
 - The latest version of Docker installed on that machine.
 - The Vault CLI (you can find the installation instructions [here](https://www.vaultproject.io/docs/install/))
+- To save time, please download the Vault image *before* the workshop.
+
+  ```bash
+  docker pull vault
+  ```
 
 ## Introduction
 
