@@ -2,7 +2,7 @@
 
 ## Overview
 
-In this lab, you will prepare your Vault development environment and create your first secret using the Vault CLI (command line interface).
+In this lab, you will prepare your Vault development environment and create your first secret using the Vault CLI (command line interface) and the HTTP API.
 
 ## Duration
 
@@ -19,17 +19,18 @@ To complete this lab, you need:
 - A computer with any of these operating systems: macOS, Linux or Windows.
 - The latest version of Docker installed on that machine.
 - The Vault CLI (you can find the installation instructions [here](https://www.vaultproject.io/docs/install/))
-- To save time, please download the Vault image *before* the workshop.
+- To save time, please download the Vault and MySQL image **before** the workshop.
 
   ```bash
   docker pull vault
+  docker pull mysql/mysql-server
   ```
 
 ## Introduction
 
 One of the core features of Vault is the ability to read and write arbitrary secrets securely. On this lab, we'll do this using the CLI and the HTTP API that can be used to programmatically do operations with Vault.
 
-Secrets written to Vault are encrypted and then written to backend storage. For our development server, backend storage is in-memory, but in production this would more likely be on disk or in [Consul](https://www.consul.io/). Vault encrypts the value before it is ever handed to the storage driver. The backend storage mechanism never sees the unencrypted value and doesn't have the means necessary to decrypt it without Vault.
+Secrets written to Vault are encrypted and then stored in a backend storage. For our development server, backend storage is in-memory, but in production this would more likely be on disk or in [Consul](https://www.consul.io/). Vault encrypts the value before it is ever handed to the storage driver. The backend storage mechanism never sees the unencrypted value and doesn't have the means necessary to decrypt it without Vault.
 
 ## Project setup
 
@@ -151,7 +152,6 @@ In this lab you:
 - Created and retrieve a secret using the REST API
 
 Now you can go to [Vault ACL policies and encryption as a service](https://github.com/walmartdigital/vault-101/blob/master/labs/lab-02.md)
-
 
 ### Search and further learning
 
