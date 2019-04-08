@@ -15,7 +15,7 @@ This workshop is made of a collection of practical examples aimed to provide you
 
 * You should have knowledge about Docker and installed on your machine.
 * Basic proficiency with command-line tools and macOS/Linux operating system environments.
-* The Vault CLI (you can find the installation instructions [here](https://www.vaultproject.io/docs/install/)
+* The Vault CLI (you can find the installation instructions [here](https://www.vaultproject.io/docs/install/))
 * To save time, please download the Vault and MySQL image **before** the workshop.
 
   ```bash
