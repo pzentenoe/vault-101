@@ -17,7 +17,7 @@ In this lab, you will prepare your Vault development environment and create your
 To complete this lab, you need:
 
 - A computer with any of these operating systems: macOS, Linux or Windows.
-- The latest version of Docker installed on that machine.
+- Deploy Vault using the latest official Docker image installed on that machine.
 - The Vault CLI (you can find the installation instructions [here](https://www.vaultproject.io/docs/install/))
 - To save time, please download the Vault and MySQL image **before** the workshop.
 
@@ -143,17 +143,17 @@ Here we will use the REST API to do Vault secret operations.
 
 ## Lab review
 
-### What you've learned
+### In this lab, you've learned how to
 
-In this lab you:
+In this lab, you've learned how to:
 
-- Created the working environment
-- Created and retrieve a secret using the CLI
-- Created and retrieve a secret using the REST API
+- Create the working environment
+- Create and retrieve a secret using the CLI
+- Create and retrieve a secret using the REST API
 
 Now you can go to [Vault ACL policies and encryption as a service](https://github.com/walmartdigital/vault-101/blob/master/labs/lab-02.md)
 
-### Search and further learning
+### Further learning
 
 - [Learning Vault, getting started](https://learn.hashicorp.com/vault/?track=getting-started#getting-started)
 - [Vault architecture](https://www.vaultproject.io/docs/internals/architecture.html)

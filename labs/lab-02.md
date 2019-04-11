@@ -16,9 +16,9 @@ In this lab, you will learn how to manage ACL Policies in Vault and use the encr
 
 To complete this lab, you need:
 
-- Complete the previous lab.
+- To have completed the previous lab.
 - A computer with any of these operating systems: macOS, Linux or Windows.
-- The latest version of Docker installed on that machine.
+- Deploy Vault using the latest official Docker image installed on that machine.
 - The Vault CLI (you can find the installation instructions [here](https://www.vaultproject.io/docs/install/))
 - To save time, please download the Vault and MySQL image **before** the workshop.
 
@@ -29,13 +29,13 @@ To complete this lab, you need:
 
 ## Introduction
 
-Everything in Vault is path based, and policies are no exception. Policies provide a declarative way to grant or forbid access to certain paths and operations in Vault. Policies are deny by default, so an empty policy grants no permission in the system.
+Everything in Vault is path based, and policies are no exception. Policies provide a declarative way to grant or forbid access to certain paths and operations in Vault. Policies are *deny by default*, so an empty policy grants no permission in the system.
 
 In this lab we will play with policy workflows and syntaxes and then we'll use the transit engine to encrypt a plain text.
 
 ## Create and modify a policy
 
-In this section we'll create a policy only with read permission, test it, and then modify the policy with more privileges testing the behaviour.
+In this section, we'll create a policy only with read permission only, test it, and then modify the policy with more privileges.
 
 - Create a create and update policy with the name "dev-policy"
 
@@ -102,7 +102,7 @@ In this section we'll create a policy only with read permission, test it, and th
 
 ## Encrypt a text string and decrypt it
 
-In this section we'll encrypt a text using the transit engine (encrypt as a service), that text will not be written into Vault but we can get the text back decrypting it.
+In this section, we'll encrypt a text using the transit engine (encrypt as a service), that text will not be written into Vault but we can get the text back decrypting it.
 
 - Enable transit engine
 
@@ -144,7 +144,7 @@ In this section we'll encrypt a text using the transit engine (encrypt as a serv
 
 ## Lab review
 
-### What you've learned
+### In this lab, you've learned how to
 
 In this lab you:
 
@@ -154,7 +154,7 @@ In this lab you:
 
 Now you can go to [Vault dynamic secrets](https://github.com/walmartdigital/vault-101/blob/master/labs/lab-03.md)
 
-### Search and further learning
+### Further learning
 
 - [Policies in Vault](https://www.hashicorp.com/resources/policies-vault)
 - [Transit Secrets Engine](https://www.vaultproject.io/docs/secrets/transit/index.html)

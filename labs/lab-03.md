@@ -2,7 +2,7 @@
 
 ## Overview
 
-In this lab, you will learn how to create a MySQL user dynamically when your app need it.
+In this lab, you will learn how to create a MySQL credential dynamically when your app need it.
 
 ## Duration
 
@@ -18,7 +18,7 @@ To complete this lab, you need:
 
 - Ideally have done the previous labs.
 - A computer with any of these operating systems: macOS, Linux or Windows.
-- The latest version of Docker installed on that machine.
+- Deploy Vault using the latest official Docker image installed on that machine.
 - The Vault CLI (you can find the installation instructions [here](https://www.vaultproject.io/docs/install/))
 - To save time, please download the Vault and MySQL image **before** the workshop.
 
@@ -150,7 +150,7 @@ This shoud fail because that user only have select permission on that database.
 
 ## Lab review
 
-### What you've learned
+### In this lab, you've learned how to
 
 In this lab you:
 
@@ -158,6 +158,6 @@ In this lab you:
 - Enable and configure the database secret engine
 - Create dynamically a user and then use it to access a database
 
-### Search and further learning
+### Further learning
 
 - [Vault database secret engine](https://www.vaultproject.io/docs/secrets/databases/index.html)
