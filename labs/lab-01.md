@@ -145,8 +145,6 @@ Here we will use the REST API to do Vault secret operations.
 
 ### In this lab, you've learned how to
 
-In this lab, you've learned how to:
-
 - Create the working environment
 - Create and retrieve a secret using the CLI
 - Create and retrieve a secret using the REST API

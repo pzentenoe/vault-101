@@ -152,8 +152,6 @@ This shoud fail because that user only have select permission on that database.
 
 ### In this lab, you've learned how to
 
-In this lab you:
-
 - Deploy a MySQL database with a privileged user
 - Enable and configure the database secret engine
 - Create dynamically a user and then use it to access a database

@@ -146,8 +146,6 @@ In this section, we'll encrypt a text using the transit engine (encrypt as a ser
 
 ### In this lab, you've learned how to
 
-In this lab you:
-
 - Create a simple policy and a token associated to this
 - Update that policy with more permissions
 - Encrypt and decrypt a plain text
